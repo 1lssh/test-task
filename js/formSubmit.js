@@ -1,13 +1,25 @@
 const form = document.querySelector('.form__info');
 const selectInput = document.querySelector('.form__select-input');
 const nameInput = form.querySelector('.form__name-input');
-const radioInput = form.elements("language")
+// const radioInput = form.elements("language")
+const modal = document.querySelector('dialog')
+const modalBox = document.querySelector('.modal-box')
+const submitBtn = document.querySelector('.form__btn')
 
-form.addEventListener('submit', (evt) => {
-  // Отменяем действие по умолчанию
-  evt.preventDefault();
+const modalRangeMin = document.querySelector('.modal-box__range-min')
+const modalRangeMax = document.querySelector('.modal-box__range-max')
+const modalSelect = document.querySelector('.modal-box__select')
+const modalRadio = document.querySelector('.modal-box__radio')
+const modalName = document.querySelector('.modal-box__name')
+const modalAge = document.querySelector('.modal-box__age')
+
+let isModalOpen = false
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
   let isError = false
   let fullName = nameInput.value.split(' ')
+  
 
   if (fullName.length == 3) {
     fullName.forEach((str) => {
@@ -19,54 +31,30 @@ form.addEventListener('submit', (evt) => {
     isError = true
   }
 
-  isError ? alert('Не допустимые значения ФИО') : form.submit()
+  if (isError) {
+    alert('Не допустимые значения ФИО')
+  } else {
+    // form.submit()
+    modal.showModal()
+    isModalOpen = true
+    e.stopPropagation()
+  }
+
+  modalSelect.textContent = selectInput.value
+  modalName.textContent = nameInput.value
   console.log(
     selectInput.value,
     nameInput.value,
-    radioInput.value
+    // radioInput.value
   )
+})
 
-  //   // Получаем значения полей формы
-  //   const login = loginInput.value;
-  //   const password = passwordInput.value;
-  //   const confirmPassword = confirmPasswordInput.value;
 
-  //   // Проверяем, что поля заполнены
-  //   if (!login || !password || !confirmPassword) {
-  //     alert('Пожалуйста, заполните все поля');
-  //     return;
-  //   }
 
-  //   // Проверяем, что имя пользователя содержит только буквы и цифры
-  //   if (!isValidLogin(login)) {
-  //     alert('Логин может содержать только буквы на латинице и цифры');
-  //     return;
-  //   }
 
-  //   // Проверяем, что пароль содержит хотя бы одну заглавную букву, одну строчную букву и одну цифру
-  //   if (!isValidPassword(password)) {
-  //     alert('Пароль должен содержать как минимум одну заглавную букву, одну строчную букву и одну цифру');
-  //     return;
-  //   }
 
-  //   // Проверяем, что пароли совпадают
-  //   if (password !== confirmPassword) {
-  //     alert('Пароли не совпадают');
-  //     return;
-  //   }
-
-  //   // Если всё в порядке, отправляем форму
-  //   form.submit();
-  // });
-
-  // function isValidLogin(login) {
-  //   // Проверка имени регулярным выражением
-  //   const pattern = /^[a-zA-Z0-9]+$/;
-  //   return pattern.test(login);
-  // }
-
-  // function isValidPassword(password) {
-  //   // Проверка пароля регулярным выражением
-  //   const pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,20}$/;
-  //   return pattern.test(password);
+document.addEventListener('click', (e) => {
+  if (isModalOpen && !modalBox.contains(e.target)) {
+    modal.close()
+  }
 })

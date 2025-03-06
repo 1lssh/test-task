@@ -73,13 +73,15 @@
               Выберите select
             </div>
             <div class="form__select">
-              <select type="select" required class="form__select-input input" value="" placeholder="option">
+              <select required class="form__select-input input" value="" placeholder="option">
                 <option value="" selected disabled style="display:none">Option</option>
                 <option value="vite">Vite</option>
                 <option value="webpac">Webpack</option>
                 <option value="gulp">Gulp</option>
               </select>
             </div>
+
+            <script src="./js/select.js"></script>
           </div>
           <div class="form__name">
             <div class="form__name-title input-title">
@@ -94,12 +96,24 @@
               Выберите radio
             </div>
             <div class="form__languages-input">
-              <input type="radio" id="languageChoice1" name="language" value="Javascript"> <label
-                for="languageChoice1">Javascript</label>
-              <input type="radio" id="languageChoice2" name="language" value="PHP"> <label
-                for="languageChoice2">PHP</label>
-              <input type="radio" id="languageChoice3" name="language" value="C#"> <label
-                for="languageChoice3">C#</label>
+              <div class="form__languages-item">
+                <input type="radio" id="languageChoice1" name="languageRadio" value="Javascript">
+                <label for="languageChoice1" class="custom-radio"></label>
+                <span>Javascript</span>
+              </div>
+
+              <div class="form__languages-item">
+                <input type="radio" id="languageChoice2" name="languageRadio" value="PHP">
+                <label for="languageChoice2" class="custom-radio"></label>
+                <span>PHP</span>
+              </div>
+
+              <div class="form__languages-item">
+                <input type="radio" id="languageChoice3" name="languageRadio" value="C#">
+                <label for="languageChoice3" class="custom-radio"></label>
+                <span>C#</span>
+              </div>
+              <script src="./js/radio.js"></script>
             </div>
           </div>
           <div class="form__age">
@@ -120,7 +134,6 @@
           </div>
         </div>
         <div class="form__submit">
-          <script src="./js/formSubmit.js"></script>
           <button class="form__btn">Отправить</button>
         </div>
       </form>
@@ -152,6 +165,33 @@
       </div>
     </div>
   </section>
+  <button class="show-modal-btn">Show modal</button>
+  <dialog>
+    <div class="modal-box">
+      <div class="modal-box__title">Modal content</div>
+      <div class="modal-box__info">
+        <div>
+          Диапазон: от <span class="modal-box__range-min"></span> до <span class="modal-box__range-min"></span>
+        </div>
+        <div>
+          Select: <span class="modal-box__select"></span>
+        </div>
+        <div >
+          Radio: <spa class="modal-box__radio"></span>
+        </div>
+        <div >
+          ФИО: <span class="modal-box__name"></span>
+        </div>
+        <div>
+          Возраст: <span class="modal-box__age"></span>
+        </div>
+        <div>
+          Выбранные checkbox: <span class="modal-box__checkbox"></span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <script src="./js/formSubmit.js"></script>
 </body>
 
 </html>
