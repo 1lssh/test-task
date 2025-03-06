@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="main">
+    <div class="main__container">
+      <div class="main__content">
+        <div class="main__info">
+          <div class="main__title title">
+            <h1>
+              Заголовок h1
+            </h1>
+          </div>
+          <div class="main__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat.
+          </div>
+        </div>
+        <div class="main__img">
+          <img src="./source/images/ab89961a5da7b8809ef969a886ebaef1.png" alt="img">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="form">
+    <div class="container">
+      <div class="form__title title">
+        <h1>
+          Заголовок h2
+        </h1>
+      </div>
+      <form class="form__info" action="">
+        <div class="form__wrapper">
+          <div class="form__range">
+            <div class="form__range-title input-title">
+              Выберите диапазон
+            </div>
+            <div class="form__range-inputs">
+              <div class="form__range-min">
+                <input class="form__range-min-input input" type="number" value="0" min="0" max="150" placeholder="От 0"
+                  onchange="slideOne('input')">
+              </div>
+              <div class="form__range-max">
+                <input class="form__range-max-input input" type="number" value="150" min="0" max="150"
+                  placeholder="до 150" onchange="slideTwo('input')">
+              </div>
+            </div>
+            <div class="form__range-range">
+              <div class="form__slider-track"></div>
+              <input type="range" class="form__slider-min" min="0" max="150" value="0" oninput="slideOne('slider')">
+              <input type="range" class="form__slider-max" min="0" max="150" value="150" oninput="slideTwo('slider')">
+            </div>
+
+            <script src="./js/slider.js"></script>
+          </div>
+          <div class="form__select">
+            <div class="form__select-title input-title">
+              Выберите select
+            </div>
+            <div class="form__select">
+              <select type="select" required class="form__select-input input" value="" placeholder="option">
+                <option value="" selected disabled style="display:none">Option</option>
+                <option value="vite">Vite</option>
+                <option value="webpac">Webpack</option>
+                <option value="gulp">Gulp</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__name">
+            <div class="form__name-title input-title">
+              Введите ФИО
+            </div>
+            <div class="form__name-info">
+              <input type="text" class="form__name-input input" value="" placeholder="Placeholder">
+            </div>
+          </div>
+          <div class="form__languages">
+            <div class="form__languages-title input-title">
+              Выберите radio
+            </div>
+            <div class="form__languages-input">
+              <input type="radio" id="languageChoice1" name="language" value="Javascript"> <label
+                for="languageChoice1">Javascript</label>
+              <input type="radio" id="languageChoice2" name="language" value="PHP"> <label
+                for="languageChoice2">PHP</label>
+              <input type="radio" id="languageChoice3" name="language" value="C#"> <label
+                for="languageChoice3">C#</label>
+            </div>
+          </div>
+          <div class="form__age">
+            <div class="form__age-title input-title">
+              Введите возраст в цифрах
+            </div>
+            <div class="form__age-info">
+              <input type="number" class="form__age-input input" required placeholder="Placeholder">
+            </div>
+          </div>
+          <div class="form__checkboxes">
+            <div class="form__checkboxes-item">
+              <input type="checkbox" required> <label for="">Обязательный checkbox</label>
+            </div>
+            <div class="form__checkboxes-item">
+              <input type="checkbox" class="custom-checkbox"> <label for="">Необязательный checkbox</label>
+            </div>
+          </div>
+        </div>
+        <div class="form__submit">
+          <script src="./js/formSubmit.js"></script>
+          <button class="form__btn">Отправить</button>
+        </div>
+      </form>
+    </div>
+    </div>
+  </section>
+  <section class="description">
+    <div class="container">
+      <div class="description__title title">
+        <h1>
+          Заголовок h3
+        </h1>
+      </div>
+      <div class="description__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="line"></div>
+  </div>
+  <section class="footer">
+    <div class="container">
+      <div class="footer__info">
+        © Хусаинов Ильшат Рафаилович, 2000 -
+        <script type="text/javascript">let year = new Date(); document.write(year.getFullYear());</script>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
