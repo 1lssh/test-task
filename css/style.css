@@ -361,12 +361,23 @@ input[type='checkbox'] {
 }
 
 .modal-box {
+  padding: 30px 40px;
   width: 400px;
-  height: 30vh;
+  height: 200px;
+}
+
+.modal-box__info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-box__title {
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 dialog {
-  
   border: none;
   -webkit-box-shadow: 39px 41px 0px 0px rgb(0, 0, 0);
   -moz-box-shadow: 39px 41px 0px 0px rgb(0, 0, 0);

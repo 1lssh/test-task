@@ -1,0 +1,321 @@
+.form {
+  margin: 37px 0px 40px 0px;
+
+  & select::-ms-expand {
+    display: none;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    grid-template-areas:
+      "range range"
+      "select radio"
+      "name age"
+      "checkbox checkbox";
+
+    & form {
+      max-height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+    }
+
+    @media screen and (max-width: 460px) {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__range {
+    grid-area: range;
+    width: calc(50% - 15px);
+
+    @media screen and (max-width: 460px) {
+      width: 100%;
+    }
+
+    &-inputs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    &-min {
+      width: 100%;
+      margin-right: 14px;
+    }
+
+    &-max {
+      width: 100%;
+    }
+
+    &-range {
+      position: relative;
+      margin-bottom: 30px;
+
+      & input {
+        width: calc(50% - 15px);
+      }
+    }
+  }
+
+  &__slider-track {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    margin: auto;
+    border-radius: 5px;
+  }
+
+  &__checkboxes {
+    grid-area: checkbox;
+    margin-bottom: 24px;
+    display: flex;
+
+    @media screen and (max-width: 460px) {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    &-item {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__languages {
+    font-size: 14px;
+
+    &-input {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  &__select {
+    grid-area: select;
+
+    &-input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: white;
+      background-image: url('../source/icons/arrow-down.svg');
+      background-position: right 10px center;
+      background-size: 10px 10px;
+      background-repeat: no-repeat;
+    }
+
+    &-active {
+      background-image: url('../source/icons/arrow-up.svg');
+      background-position: right 10px center;
+      background-size: 10px 10px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__btn {
+    width: 150px;
+    height: 38px;
+    color: white;
+    background-color: #3A41FF;
+    font-family: Source Code Pro;
+    -webkit-box-shadow: 39px 41px 0px 0px rgba(34, 60, 80, 1);
+    -moz-box-shadow: 39px 41px 0px 0px rgba(34, 60, 80, 1);
+    box-shadow: 10px 5px 0px 0px rgba(34, 60, 80, 1);
+    transition: all .3s;
+
+
+    &:hover {
+      background-color: white;
+      color: #3A41FF;
+    }
+  }
+
+  &__name {
+    grid-area: name;
+  }
+
+  &__age {
+    grid-area: age;
+  }
+
+  &__radio {
+    grid-area: radio;
+  }
+
+  &__submit {
+    @media screen and (max-width: 460px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  margin: auto;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 1px;
+}
+
+input[type="range"]::-moz-range-track {
+  -moz-appearance: none;
+  height: 1px;
+}
+
+input[type="range"]::-ms-track {
+  appearance: none;
+  height: 1px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  background-color: #3A41FF;
+  cursor: pointer;
+  margin-top: -4px;
+  pointer-events: auto;
+  border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+  width: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #3A41FF;
+  pointer-events: auto;
+  border: none;
+}
+
+input[type="range"]::-ms-thumb {
+  appearance: none;
+  height: 10px;
+  width: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #3A41FF;
+  pointer-events: auto;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  background-color: #ffffff;
+  border: 1px solid #3A41FF;
+}
+
+.form .form__languages-item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.custom-radio {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #3A41FF;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+}
+
+
+input[type="radio"]:checked+.custom-radio::after {
+  opacity: 1;
+}
+
+input[type="radio"]:checked+.custom-radio {
+  border: 1px solid #3A41FF;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  padding: 5px;
+  font-family: Source Code Pro;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+
+input[type="checkbox"] {
+  accent-color: #3A41FF;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.form__select-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  background-image: url('../source/icons/arrow-down.svg');
+  background-position: right 10px center;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+}
+
+.select-active {
+  background-image: url('../source/icons/arrow-up.svg');
+  background-position: right 10px center;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+}

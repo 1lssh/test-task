@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
+  <!-- <link rel="stylesheet" href="./css/style.css"> -->
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./scss/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
@@ -75,9 +76,9 @@
             <div class="form__select">
               <select required class="form__select-input input" value="" placeholder="option">
                 <option value="" selected disabled style="display:none">Option</option>
-                <option value="vite">Vite</option>
-                <option value="webpac">Webpack</option>
-                <option value="gulp">Gulp</option>
+                <option value="Vite">Vite</option>
+                <option value="Webpack">Webpack</option>
+                <option value="Gulp">Gulp</option>
               </select>
             </div>
 
@@ -170,22 +171,22 @@
     <div class="modal-box">
       <div class="modal-box__title">Modal content</div>
       <div class="modal-box__info">
-        <div>
-          Диапазон: от <span class="modal-box__range-min"></span> до <span class="modal-box__range-min"></span>
+        <div class="modal-box__info-item">
+          Диапазон: от <span class="modal-box__range-min"></span> до <span class="modal-box__range-max"></span>
         </div>
-        <div>
+        <div class="modal-box__info-item">
           Select: <span class="modal-box__select"></span>
         </div>
-        <div >
+        <div class="modal-box__info-item">
           Radio: <spa class="modal-box__radio"></span>
         </div>
-        <div >
+        <div class="modal-box__info-item">
           ФИО: <span class="modal-box__name"></span>
         </div>
-        <div>
+        <div class="modal-box__info-item">
           Возраст: <span class="modal-box__age"></span>
         </div>
-        <div>
+        <div class="modal-box__info-item">
           Выбранные checkbox: <span class="modal-box__checkbox"></span>
         </div>
       </div>

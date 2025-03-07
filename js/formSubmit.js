@@ -1,10 +1,12 @@
 const form = document.querySelector('.form__info');
 const selectInput = document.querySelector('.form__select-input');
 const nameInput = form.querySelector('.form__name-input');
-// const radioInput = form.elements("language")
 const modal = document.querySelector('dialog')
 const modalBox = document.querySelector('.modal-box')
 const submitBtn = document.querySelector('.form__btn')
+const rangeMin = document.querySelector('.form__range-min-input')
+const rangeMax = document.querySelector('.form__range-max-input')
+const age = document.querySelector('.form__age-input')
 
 const modalRangeMin = document.querySelector('.modal-box__range-min')
 const modalRangeMax = document.querySelector('.modal-box__range-max')
@@ -19,7 +21,9 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   let isError = false
   let fullName = nameInput.value.split(' ')
-  
+
+  let radios = form.elements['languageRadio'];
+  let selectedRadio = Array.from(radios).find(r => r.checked)?.value;
 
   if (fullName.length == 3) {
     fullName.forEach((str) => {
@@ -39,14 +43,12 @@ form.addEventListener('submit', (e) => {
     isModalOpen = true
     e.stopPropagation()
   }
-
+  modalRangeMin.textContent = rangeMin.value
+  modalRangeMax.textContent = rangeMax.value
   modalSelect.textContent = selectInput.value
   modalName.textContent = nameInput.value
-  console.log(
-    selectInput.value,
-    nameInput.value,
-    // radioInput.value
-  )
+  modalRadio.textContent = selectedRadio
+  modalAge.textContent = age.value
 })
 
 
