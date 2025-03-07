@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="./css/style.css"> -->
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./scss/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
@@ -89,7 +88,13 @@
               Введите ФИО
             </div>
             <div class="form__name-info">
-              <input type="text" class="form__name-input input" value="" placeholder="Placeholder">
+              <input 
+                type="text" 
+                class="form__name-input input" 
+                value="" 
+                required pattern="[A-Za-zА-Яа-я\s]+" 
+                title="Разрешены только буквы" 
+                placeholder="Placeholder">
             </div>
           </div>
           <div class="form__languages">
@@ -98,7 +103,7 @@
             </div>
             <div class="form__languages-input">
               <div class="form__languages-item">
-                <input type="radio" id="languageChoice1" name="languageRadio" value="Javascript">
+                <input type="radio" required id="languageChoice1"  name="languageRadio" value="Javascript">
                 <label for="languageChoice1" class="custom-radio"></label>
                 <span>Javascript</span>
               </div>
@@ -127,10 +132,10 @@
           </div>
           <div class="form__checkboxes">
             <div class="form__checkboxes-item">
-              <input type="checkbox" required> <label for="">Обязательный checkbox</label>
+              <input type="checkbox" class="form__checkbox" required value="Обязательный"> <label for="">Обязательный checkbox</label>
             </div>
             <div class="form__checkboxes-item">
-              <input type="checkbox" class="custom-checkbox"> <label for="">Необязательный checkbox</label>
+              <input type="checkbox" class="form__checkbox" class="custom-checkbox" value="Необязательный"> <label for="">Необязательный checkbox</label>
             </div>
           </div>
         </div>
@@ -166,10 +171,9 @@
       </div>
     </div>
   </section>
-  <button class="show-modal-btn">Show modal</button>
   <dialog>
     <div class="modal-box">
-      <div class="modal-box__title">Modal content</div>
+      <div class="modal-box__title">Результат отправки</div>
       <div class="modal-box__info">
         <div class="modal-box__info-item">
           Диапазон: от <span class="modal-box__range-min"></span> до <span class="modal-box__range-max"></span>

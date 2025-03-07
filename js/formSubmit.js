@@ -7,6 +7,7 @@ const submitBtn = document.querySelector('.form__btn')
 const rangeMin = document.querySelector('.form__range-min-input')
 const rangeMax = document.querySelector('.form__range-max-input')
 const age = document.querySelector('.form__age-input')
+const checkboxes = document.querySelectorAll('.form__checkbox')
 
 const modalRangeMin = document.querySelector('.modal-box__range-min')
 const modalRangeMax = document.querySelector('.modal-box__range-max')
@@ -14,6 +15,7 @@ const modalSelect = document.querySelector('.modal-box__select')
 const modalRadio = document.querySelector('.modal-box__radio')
 const modalName = document.querySelector('.modal-box__name')
 const modalAge = document.querySelector('.modal-box__age')
+const modalCheckbox = document.querySelector('.modal-box__checkbox')
 
 let isModalOpen = false
 
@@ -49,6 +51,10 @@ form.addEventListener('submit', (e) => {
   modalName.textContent = nameInput.value
   modalRadio.textContent = selectedRadio
   modalAge.textContent = age.value
+  checkboxes.forEach(ch => {
+    console.log(ch.checked)
+    if(ch.checked) modalCheckbox.textContent += `${ch.value}; `
+  })
 })
 
 
